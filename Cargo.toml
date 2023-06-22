@@ -1,0 +1,17 @@
+[package]
+name = "humanise"
+version = "0.1.0"
+edition = "2021"
+description = "Humanise data"
+
+[dependencies]
+chrono = { version = "0.4", optional = true }
+
+[features]
+default = ["durations"]
+durations = []
+chrono = ["dep:chrono", "durations"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
