@@ -1,6 +1,6 @@
 [package]
 name = "humanise"
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT"
 edition = "2021"
 description = "Humanise data"
@@ -10,11 +10,13 @@ keywords = ["human-readable", "format"]
 
 [dependencies]
 chrono = { version = "0.4", optional = true }
+time = { version = "0.3", optional = true }
 
 [features]
 default = ["durations"]
 durations = []
-chrono = ["dep:chrono", "durations"]
+chrono = ["dep:chrono"]
+time = ["dep:time"]
 
 [package.metadata.docs.rs]
 all-features = true

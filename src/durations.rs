@@ -112,6 +112,14 @@ pub fn humanise_duration(duration: Duration, verbose: bool) -> String {
 pub fn humanise_duration_chrono(duration: chrono::Duration, verbose: bool) -> String {
     humanise_duration_ms(duration.num_milliseconds().abs() as u128, verbose)
 }
+/// Converts `duration` to milliseconds, then humanises that.
+///
+/// See [`humanise_duration_ms`].
+#[cfg_attr(docsrs, doc(cfg(feature = "time")))]
+#[cfg(feature = "time")]
+pub fn humanise_duration_time(duration: time::Duration, verbose: bool) -> String {
+    humanise_duration_ms(duration.whole_milliseconds().abs() as u128, verbose)
+}
 
 #[cfg(test)]
 mod tests {
