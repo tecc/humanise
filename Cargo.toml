@@ -1,8 +1,12 @@
 [package]
 name = "humanise"
 version = "0.1.0"
+license = "MIT"
 edition = "2021"
 description = "Humanise data"
+repository = "https://github.com/tecc/humanise.git"
+authors = ["tecc"]
+keywords = ["human-readable", "format"]
 
 [dependencies]
 chrono = { version = "0.4", optional = true }
